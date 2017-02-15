@@ -167,6 +167,7 @@ int main(int argc, char ** argv)
     dict == "animals" ? animals :
     dict == "plants" ? plants :
     dict == "scientists_last" ? scientists_last :
+    dict == "scientists_full" ? scientists_full :
     dict == "lovecraft" ? lovecraft :
     animals; //default
 
