@@ -1,5 +1,23 @@
 A docker/Ubuntu-like name generator with a bunch of customization features.
 
+## Requirements
+
+  * TCLAP
+
+On Ubuntu, install with:
+
+```
+apt install libtclap-dev
+```
+
+## Installation
+
+```
+git clone https://github.com/bschiffthaler/mkname
+cd mkname
+make
+```
+
 ## Dictionaries
 
 * `animals` - [List of animals by common name](https://en.wikipedia.org/wiki/List_of_animals_by_common_name)
