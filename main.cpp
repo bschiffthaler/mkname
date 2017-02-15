@@ -47,23 +47,29 @@ std::string get_rand_subject(std::map<char,
   return subs[ d_second(generator) ];
 }
 
-std::string get_rand_adjective(void)
+std::string get_rand_adjective(std::map<char,
+                               std::vector<std::string> > dict)
 {
   std::vector<char> keys;
-  for(auto c : adjectives)
+  for(auto c : dict)
     keys.push_back(c.first);
 
   std::uniform_int_distribution<size_t> d_first(0,keys.size() - 1);
   char k = keys[ d_first(generator) ];
 
-  std::vector<std::string>& adjs = adjectives[k];
+  std::vector<std::string>& adjs = dict[k];
   std::uniform_int_distribution<size_t> d_second(0,adjs.size() - 1);
   return adjs[ d_second(generator) ];
 }
 
-std::string get_adjective_by_first(char k)
+std::string get_adjective_by_first(char k,
+                                   std::map<char,
+                                   std::vector<std::string> > dict)
 {
-  std::vector<std::string>& a = adjectives[toupper(k)];
+  auto it = dict.find(toupper(k));
+  if(it == dict.end())
+    return "";
+  std::vector<std::string>& a = it->second;
   std::uniform_int_distribution<size_t> d(0, a.size() - 1);
   return a[ d(generator) ];
 }
@@ -72,7 +78,10 @@ std::string get_subject_by_first(char k,
                                  std::map<char,
                                  std::vector<std::string> > dict)
 {
-  std::vector<std::string>& s = dict[toupper(k)];
+  auto it = dict.find(toupper(k));
+  if(it == dict.end())
+    return "";
+  std::vector<std::string>& s = it->second;
   std::uniform_int_distribution<size_t> d(0, s.size() - 1);
   return s[ d(generator) ];
 }
@@ -81,6 +90,7 @@ int main(int argc, char ** argv)
 {
   size_t n = 1;
   std::string dict = "animals";
+  std::string adj_dict = "common-english";
   bool alliterate = false;
   char s = '\0';
   char S = '\0';
@@ -94,9 +104,12 @@ int main(int argc, char ** argv)
       TCLAP::ValueArg<size_t> arg_n("n", "number",
                                     "Number of names to print (default: 1)",
                                     false, 1, "number");
-      TCLAP::ValueArg<std::string> arg_d("d", "dict",
-                                         "Dictionary to use (default: 'animals')",
-                                         false, "animals", "animals,plants,scientists_last,scientists_full");
+      TCLAP::ValueArg<std::string> arg_d("d", "subject-dict",
+                                         "Dictionary to use for subjects (default: 'animals')",
+                                         false, "animals", "animals,plants,scientists_last,scientists_full,lovecraft");
+      TCLAP::ValueArg<std::string> arg_D("D", "adjective-dict",
+                                         "Dictionary to use for adjectives (default: 'common-english')",
+                                         false, "animals", "common-english,lovecraft");
       TCLAP::ValueArg<char> arg_s("s", "start-subject",
                                   "Start subject with letter (default: random)",
                                   false, '\0', "character");
@@ -123,6 +136,7 @@ int main(int argc, char ** argv)
       cmd.add(arg_L);
       cmd.add(arg_m);
       cmd.add(arg_M);
+      cmd.add(arg_D);
       TCLAP::SwitchArg switch_a("a","alliterate",
                                 "Make the combination an alliteration (default: false)",
                                 cmd, false);
@@ -137,6 +151,7 @@ int main(int argc, char ** argv)
       word_delim = arg_L.getValue();
       minlength = arg_m.getValue();
       maxlength = arg_M.getValue();
+      adj_dict = arg_D.getValue();
     }
   catch (TCLAP::ArgException &e)
     {
@@ -152,8 +167,14 @@ int main(int argc, char ** argv)
     dict == "animals" ? animals :
     dict == "plants" ? plants :
     dict == "scientists_last" ? scientists_last :
-    scientists_full;
+    dict == "lovecraft" ? lovecraft :
+    animals; //default
 
+  std::map<char, std::vector<std::string> >& adjective_dict =
+    dict == "common-english" ? adjectives :
+    dict == "lovecraft" ? lovecraft_adj :
+    adjectives; //default
+  
   std::set<std::string> res;
   while(res.size() < n)
     {
@@ -166,31 +187,55 @@ int main(int argc, char ** argv)
               subj = get_rand_subject(subject_dict);
               if(S != '\0')
                 {
-                  adj = get_adjective_by_first(S);
+                  adj = get_adjective_by_first(S, adjective_dict);
                 }
               else if(alliterate)
                 {
-                  adj = get_adjective_by_first(subj[0]);
+                  adj = get_adjective_by_first(subj[0], adjective_dict);
                 }
               else
                 {
-                  adj = get_rand_adjective();;
+                  adj = get_rand_adjective(adjective_dict);;
                 }
+              if( adj == "" && S != '\0' )
+                {
+                  std::cerr << "Current dict has no adjectives for letter "
+                            <<  S << '\n';
+                  return 1;
+                }
+              else if(adj == "")
+                {
+                  subj = "";
+                  continue;
+                }
+                
             }
           else
             {
               subj = get_subject_by_first(s, subject_dict);
               if(S != '\0')
                 {
-                  adj = get_adjective_by_first(S);
+                  adj = get_adjective_by_first(S, adjective_dict);
                 }
               else if(alliterate)
                 {
-                  adj = get_adjective_by_first(subj[0]);
+                  adj = get_adjective_by_first(subj[0], adjective_dict);
                 }
               else
                 {
-                  adj = get_rand_adjective();
+                  adj = get_rand_adjective(adjective_dict);
+                }
+              if( ( adj == "" && S != '\0' ) ||
+                  ( adj == "" && alliterate ) )
+                {
+                  std::cerr << "Current dict has no adjectives for letter "
+                            <<  s << '\n';
+                  return 1;
+                }
+              else if(adj == "")
+                {
+                  subj = "";
+                  continue;
                 }
             }
         }
