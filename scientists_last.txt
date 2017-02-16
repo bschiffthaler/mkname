@@ -27,7 +27,7 @@ Wallace
 Avogadro
 Anaximander
 Celsius
-Ampère
+Amp`ere
 Vesalius
 Alcala
 Lavoisier
@@ -102,7 +102,7 @@ Mach
 Mayr
 Siemens
 Chargaff
-Schrödinger
+Schr"odinger
 Euclid
 Torricelli
 Fibonacci
@@ -119,8 +119,8 @@ Hoyle
 Hopkins
 Sanger
 Soddy
-Kekulé
-Wöhler
+Kekul'e
+W"ohler
 Haber
 Galen
 Galilei
@@ -341,7 +341,7 @@ Heisenbergn
 Braun
 Wright
 Ostwald
-Röntgen
+R"ontgen
 Wundt
 Libby
 Gibbs

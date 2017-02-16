@@ -27,7 +27,7 @@ Alfred Russel Wallace
 Amedeo Avogadro
 Anaximander
 Anders Celsius
-Andre Marie Ampère
+Andre Marie Amp`ere
 Andreas Vesalius
 Angel Alcala
 Antoine Lavoisier
@@ -102,7 +102,7 @@ Ernst Mach
 Ernst Mayr
 Ernst Werner von Siemens
 Erwin Chargaff
-Erwin Schrödinger
+Erwin Schr"odinger
 Euclid
 Evangelista Torricelli
 Fibonacci
@@ -119,8 +119,8 @@ Fred Hoyle
 Frederick Gowland Hopkins
 Frederick Sanger
 Frederick Soddy
-Friedrich August Kekulé
-Friedrich Wöhler
+Friedrich August Kekul'e
+Friedrich W"ohler
 Fritz Haber
 Galen
 Galileo Galilei
@@ -287,7 +287,7 @@ Pythagoras
 Rachel Carson
 Ramon Barba
 Randy Pausch
-René Descartes
+Ren'e Descartes
 Richard Feynman
 Rita Levi-Montalcini
 Robert Bosch
@@ -341,7 +341,7 @@ Werner Heisenbergn
 Wernher Von Braun
 Wilbur and Orville Wright
 Wilhelm Ostwald
-Wilhelm Röntgen
+Wilhelm R"ontgen
 Wilhelm Wundt
 Willard Frank Libby
 Willard Gibbs
