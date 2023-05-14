@@ -4,9 +4,11 @@
 
 *[Phil Karlton](https://skeptics.stackexchange.com/questions/19836/has-phil-karlton-ever-said-there-are-only-two-hard-things-in-computer-science)*
 
-Unique ids are required constantly for naming hosts, services, infrastructure, etc.  In the same spirit as Ubuntu with ts random and catchy '<adjective> <animal>' release cycle, provided here is a Bash program that can assist in generating similar identifiers.
 
-By default it will generate '<adjective>-<animal>-<numbers>', but it has options for pulling from scientists, plants, etc. as well as the ability to limit phrase length and the seperator.
+
+Unique ids are required constantly for naming hosts, services, infrastructure, etc.  In the same spirit as Ubuntu with its random and catchy '*adjective animal*' release cycle, provided here is a Bash program that can assist in generating similar identifiers.
+
+By default it will generate '*adjective-animal-numbers*', but it has options for pulling from scientists, plants, etc. as well as the ability to limit phrase length and the seperator.
 
 The credit for the source word dictionaries goes to [bschiffhaler](https://github.com/bschiffthaler/mkname), who create a C language program that would generate an Ubuntu-like identifier.
 
