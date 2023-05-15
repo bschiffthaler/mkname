@@ -133,7 +133,7 @@ function extract_words_to_tmp {
 # so you do not have to download each list of words,
 # here is the tgz compressed content of all the *.txt files
 #
-# tar cvfz words.tgz *.txt | base64
+# tar cvfz words.tgz *.txt ; base64 words.tgz
 read -r -d '' tgzdata <<EOF
 H4sIAAAAAAAAA9T9TZfsupElCtb4/oqa5Sh61derGmdKSkmZKeVtXb2srprRSbg7b5AEBRIewfj1
 z7ZtMwPi5OvVozfoOOs4toH4/jQABsMw/ZrGc36l4/91fp7/4f+Rv/8kf//9v/83mP/5f/wf/6k3
