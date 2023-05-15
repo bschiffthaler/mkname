@@ -20,7 +20,7 @@ The credit for the source word dictionaries goes to [bschiffhaler](https://githu
 
 ## Invoking standalone Bash script
 
-The simplest way to run this is with the standalone Bash script, which has the word options embedded in the script itself.
+The simplest way to run this is with the standalone Bash script, which has the word choices embedded in the script itself.
 
 ```
 wget https://raw.githubusercontent.com/fabianlee/mkname/master/mkname_offline.sh
