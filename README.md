@@ -37,8 +37,6 @@ You can also download this github project, which contains a set of .txt files us
 ```
 git clone https://github.com/fabianlee/mkname.git
 cd mkname
-
-# generate unique id
 ./mkname.sh
 ```
 
