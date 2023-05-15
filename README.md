@@ -34,7 +34,7 @@ The embedded .txt word choices will be written to your /tmp directory and then u
 
 ## Invoking with all project files
 
-You can also download this github project, which contains a set of .txt files used for the word choices.
+You can also download this github project, which contains the set of external .txt files used for the word choices.
  
 ```
 git clone https://github.com/fabianlee/mkname.git
