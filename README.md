@@ -8,7 +8,7 @@
 
 Unique ids are required constantly for naming hosts, services, infrastructure, etc.  In the same spirit as Ubuntu with its random and catchy '*adjective animal*' release cycle names, provided here is a Bash program that can assist in generating similar identifiers.
 
-By default it will generate '*adjective-animal-numbers*', but it has options for pulling from scientists, plants, etc. as well as the ability to limit phrase length and set a seperator character.  Examples:
+By default it will generate '*adjective-animal-numbers*', but it has options for pulling from scientists, plants, etc. as well as the ability to limit phrase length and set a separator character.  Examples:
 
 ```
 unresolute-flyingfish-2244301083
