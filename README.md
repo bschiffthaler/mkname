@@ -16,7 +16,7 @@ frequentab-fancymouse-3955087096
 dipyramida-dog-4624376331
 ```
 
-The credit for the source word dictionaries goes to [bschiffhaler](https://github.com/bschiffthaler/mkname), who create a C language program that would generate an Ubuntu-like identifier.
+The credit for the source word dictionaries goes to [bschiffhaler](https://github.com/bschiffthaler/mkname).
 
 
 ## Invoking standalone Bash script
