@@ -25,7 +25,8 @@ The simplest way to run this is with the standalone Bash script, which has the w
 
 ```
 wget https://raw.githubusercontent.com/fabianlee/mkname/master/mkname_offline.sh
-/bin/bash mkname_offline.sh
+chmod +x mkname_offline.sh
+./mkname_offline.sh
 ```
 
 
