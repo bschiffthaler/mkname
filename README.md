@@ -32,7 +32,7 @@ chmod +x mkname_offline.sh
 The embedded .txt word choices will be written to your /tmp directory and then used by the script.
 
 
-## Invoking with all project files
+## Invoking from project files
 
 You can also download this github project, which contains the set of external .txt files used for the word choices.
  
