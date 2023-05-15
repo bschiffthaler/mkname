@@ -18,6 +18,7 @@ dipyramida-dog-4624376331
 
 The credit for the source word dictionaries goes to [bschiffhaler](https://github.com/bschiffthaler/mkname), who create a C language program that would generate an Ubuntu-like identifier.
 
+
 ## Invoking standalone Bash script
 
 The simplest way to run this is with the standalone Bash script, which has the word choices embedded in the script itself.
@@ -27,7 +28,6 @@ wget https://raw.githubusercontent.com/fabianlee/mkname/master/mkname_offline.sh
 /bin/bash mkname_offline.sh
 ```
 
-The embedded base64 blob inside this script was generated using 'tar cvfz words.tgz | base64'
 
 ## Invoking with all project files
 
@@ -40,6 +40,7 @@ cd mkname
 # generate unique id
 ./mkname.sh
 ```
+
 
 ## Options
 
