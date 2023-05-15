@@ -78,4 +78,6 @@ Example of building '<animal> <letters> <numbers>' allow uppercase
 * `scientists_full` - [Full names of famous scientists](https://www.famousscientists.org/list/)
 * `scientists_last` - [Last names of famous scientists](https://www.famousscientists.org/list/)
 * `lovecraft` - Nouns in H.P. Lovecraft's combined works with a frequency (>10) and some extra. Manually curated
+* `numbers` - synthesized range of digits [0-9]
+* `letters` - syntheized range of letters [a-zA-Z]
 
