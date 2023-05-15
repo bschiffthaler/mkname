@@ -29,6 +29,8 @@ chmod +x mkname_offline.sh
 ./mkname_offline.sh
 ```
 
+The embedded .txt word choices will be written to your /tmp directory and then used by the script.
+
 
 ## Invoking with all project files
 
